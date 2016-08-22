@@ -100,13 +100,10 @@ public abstract class CustomFrame extends JFrame {
 	}
 
 	/** Internal method that checks and/or creates the location file. */
-	private void setLocation() {
-		boolean coordinatesFileExists = PathValidator.pathExists(coordinatesFilePath);		
+	private void setLocation() {	
 		if (PathValidator.pathExists(coordinatesFilePath)) {
-			CustomFrameCoordinates cfc = (CustomFrameCoordinates)ObjectDeserializer.deserialize(coordinatesFile);			
-			int xc = cfc.x_coord;
-			int yc = cfc.y_coord;	
-			this.setLocation(new Point(xc,yc));
+			CustomFrameCoordinates cfc = (CustomFrameCoordinates)ObjectDeserializer.deserialize(coordinatesFile);	
+			this.setLocation(new Point( cfc.x_coord,cfc.y_coord));
 		} else {
 			saveLocation();
 			setLocation();
