@@ -29,9 +29,9 @@ import com.gmail.ichglauben.swinggui.core.panels.CustomPanel;
  *
  */
 public abstract class CustomFrame extends JFrame {
-	private String coordinates = GlobalConstants.USRDIR;
+	private String coordinatesPath = GlobalConstants.USRDIR;
 	private String coordinatesFile = "_coordinates.ser";
-	private String filePath = coordinates + coordinatesFile;
+	private String coordinatesFilePath = coordinatesPath + coordinatesFile;
 	
 	/**
 	 * Overloaded constructor, this class can initialize with a custom JPanel
@@ -101,8 +101,8 @@ public abstract class CustomFrame extends JFrame {
 
 	/** Internal method that checks and/or creates the location file. */
 	private void setLocation() {
-		boolean coordinatesFileExists = PathValidator.pathExists(filePath);		
-		if (PathValidator.pathExists(filePath)) {
+		boolean coordinatesFileExists = PathValidator.pathExists(coordinatesFilePath);		
+		if (PathValidator.pathExists(coordinatesFilePath)) {
 			CustomFrameCoordinates cfc = (CustomFrameCoordinates)ObjectDeserializer.deserialize(coordinatesFile);			
 			int xc = cfc.x_coord;
 			int yc = cfc.y_coord;	
