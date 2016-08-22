@@ -29,6 +29,10 @@ import com.gmail.ichglauben.swinggui.core.panels.CustomPanel;
  *
  */
 public abstract class CustomFrame extends JFrame {
+	private String coordinates = GlobalConstants.USRDIR;
+	private String coordinatesFile = "_coordinates.ser";
+	private String filePath = coordinates + coordinatesFile;
+	
 	/**
 	 * Overloaded constructor, this class can initialize with a custom JPanel
 	 * and is automatically initialized with icon and a location memory that's
@@ -92,38 +96,18 @@ public abstract class CustomFrame extends JFrame {
 	 * location file to disk.
 	 */
 	private void saveLocation() {
-		int xc = this.getX();
-		int yc = this.getY();
-		
-		CustomFrameCoordinates cfc = new CustomFrameCoordinates(xc, yc);
-		ObjectSerializer.serialize(cfc,"_coordinates");
-
-		String path = GlobalConstants.USRDIR;
-		String file = "_coordinates.ser";
-		String filePath = path + file;
-
-		/*println("Saving Coordinates:\t X = " + cfc.x_coord + "\t Y = " + cfc.y_coord);
-		println("Saving coordinates file to:\t" + filePath + "\n");*/
-		
+		ObjectSerializer.serialize(new CustomFrameCoordinates(this.getX(), this.getY()),"_coordinates");	
 	}
 
 	/** Internal method that checks and/or creates the location file. */
 	private void setLocation() {
-		String path = GlobalConstants.USRDIR;
-		String file = "_coordinates.ser";
-		String filePath = path + file;
-		boolean coordinatesFileExists = PathValidator.pathExists(filePath);
-		
-		if (coordinatesFileExists) {
-			CustomFrameCoordinates cfc = (CustomFrameCoordinates)ObjectDeserializer.deserialize(file);			
+		boolean coordinatesFileExists = PathValidator.pathExists(filePath);		
+		if (PathValidator.pathExists(filePath)) {
+			CustomFrameCoordinates cfc = (CustomFrameCoordinates)ObjectDeserializer.deserialize(coordinatesFile);			
 			int xc = cfc.x_coord;
-			int yc = cfc.y_coord;
-		/*	
-			println("GUI's Location setting from file:\t" + filePath);
-			println("Setting GUI's location to: X = " + xc + "\t Y = " + yc);*/			
+			int yc = cfc.y_coord;	
 			this.setLocation(new Point(xc,yc));
 		} else {
-			/*println("Coordinates not found at:\t" + filePath + "\n");*/
 			saveLocation();
 			setLocation();
 		}
@@ -141,16 +125,8 @@ public abstract class CustomFrame extends JFrame {
 	/** @see java.awt.Toolkit */
 	private final static Image wi = Toolkit.getDefaultToolkit().createImage(path);
 	
-	private final static void print(Object o) {
-		System.out.print(String.valueOf(o));
-	}
-	
-	private final static void println(Object o) {
-		System.out.println(String.valueOf(o));
-	}
-
 	@Override
 	public String toString() {
-		return "Custom Frame";
+		return "Abstract Custom Frame";
 	}
 }// end class
