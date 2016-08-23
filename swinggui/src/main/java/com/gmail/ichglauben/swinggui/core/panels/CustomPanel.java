@@ -8,20 +8,24 @@ import java.io.*;
 import java.util.*;
 import java.util.ArrayList;
 import javax.swing.*;
-
 /**
- * This class is a customized JPanel.
- * 
- * @author Rick Walker
- * @version 0.1
- * @since 3-12-2014
- * @see javax.swing.JPanel
- * @see java.awt.BorderLayout
+ * <h2>Custom JPanel</h2>
+ * <div>
+ * 		<b>Class Dependencies:</b>&nbsp; none
+ * 		<b>Description:</b>&nbsp; Extends JPanel and favors BorderLayout over the default FlowLayout.
+ * </div>
+ * <ul> 
+ * 	<li>@author Rick Walker</li>
+ *  <li>@version 0.1</li>
+ *  <li>@since 3-12-2014</li>
+ *  <li>@see javax.swing.JPanel</li>
+ *  <li>@see java.awt.BorderLayout</li>
+ * </ul>
  */
 public abstract class CustomPanel extends JPanel {
 	/**
-	 * Single constructor, this class overrides the default JPanel layout in
-	 * favour of BorderLayout.
+	 * Single constructor, this class overrides JPanel's default layout in
+	 * favor of BorderLayout.
 	 */
 	public CustomPanel() {
 		super();
@@ -29,7 +33,7 @@ public abstract class CustomPanel extends JPanel {
 	}
 
 	/**
-	 * Internal method updates the main panel's border title.
+	 * Internal method updates the this panel's border title.
 	 * 
 	 * @param title
 	 *            The String for the border title
@@ -39,7 +43,7 @@ public abstract class CustomPanel extends JPanel {
 	}
 
 	/**
-	 * Internal method returns a custom JScrollPane.
+	 * Internal method returns a JscrollPane populated with the component parameter.
 	 * 
 	 * @return JScrollPane
 	 * @param component
