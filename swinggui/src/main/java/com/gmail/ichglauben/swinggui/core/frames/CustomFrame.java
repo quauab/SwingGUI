@@ -16,17 +16,20 @@ import com.gmail.ichglauben.serialmanager.core.utils.constants.GlobalConstants;
 import com.gmail.ichglauben.swinggui.core.frames.coordinates.CustomFrameCoordinates;
 import com.gmail.ichglauben.swinggui.core.panels.CustomPanel;
 
-
 /**
- * This is a customized JFrame.
- * 
- * @see javax.swing.JFrame
- * @see java.awt.BorderLayout
- * @see java.awt.Toolkit
- * @author Rick Walker
- * @version 0.1
- * @since 11/14/2015
- *
+ * <h2>Custom JFrame</h2>
+ * <div>
+ * 		<b>Class Dependencies:</b>&nbsp; SerialManager, PathValidator
+ * 		<b>Description:</b>&nbsp; Extends JFrame with a built-in mechanism for remembering it's last location at run-time.
+ * </div>
+ * <ul>
+ * 	<li>@see javax.swing.JFrame</li>
+ * 	<li>@see java.awt.BorderLayout</li>
+ * 	<li>@see java.awt.Toolkit</li>
+ * 	<li>@author Rick Walker</li>
+ * 	<li>@version 0.1</li>
+ * 	<li>@since 11/14/2015</li>
+ * </ul>
  */
 public abstract class CustomFrame extends JFrame {
 	private String coordinatesPath = GlobalConstants.USRDIR;
@@ -34,10 +37,7 @@ public abstract class CustomFrame extends JFrame {
 	private String coordinatesFilePath = coordinatesPath + coordinatesFile;
 	
 	/**
-	 * Overloaded constructor, this class can initialize with a custom JPanel
-	 * and is automatically initialized with icon and a location memory that's
-	 * activated after first run; a location file is saved in the application's
-	 * directory to which the application references on each run.
+	 * Overloaded CustomPanel argument constructor
 	 * 
 	 * @param controls
 	 *            The child JPanel that provides the GUI controls
@@ -65,10 +65,7 @@ public abstract class CustomFrame extends JFrame {
 	}
 
 	/**
-	 * Overloaded constructor, this class can initialize without argument and is
-	 * automatically initialized with icon and a location memory that's
-	 * activated after first run; a location file is saved in the application's
-	 * directory to which the application references on each run.
+	 * Overloaded empty constructor
 	 */
 	public CustomFrame() {
 		super();
@@ -92,14 +89,13 @@ public abstract class CustomFrame extends JFrame {
 	}
 
 	/**
-	 * Internal method that calls the objects that creates and saves the
-	 * location file to disk.
+	 * Internal method calls ObjectSerializer
 	 */
 	private void saveLocation() {
 		ObjectSerializer.serialize(new CustomFrameCoordinates(this.getX(), this.getY()),"_coordinates");	
 	}
 
-	/** Internal method that checks and/or creates the location file. */
+	/** Internal method that checks for and creates the _coordinates.ser file. */
 	private void setLocation() {	
 		if (PathValidator.pathExists(coordinatesFilePath)) {
 			CustomFrameCoordinates cfc = (CustomFrameCoordinates)ObjectDeserializer.deserialize(coordinatesFile);	
