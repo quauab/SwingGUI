@@ -19,17 +19,15 @@ import com.gmail.ichglauben.swinggui.core.panels.CustomPanel;
 /**
  * <h2>Custom JFrame</h2>
  * <div>
- * 		<b>Class Dependencies:</b>&nbsp; SerialManager, PathValidator
+ * 		<b>Class Dependencies:</b>&nbsp; SerialManager, PathValidator<br>
  * 		<b>Description:</b>&nbsp; Extends JFrame with a built-in mechanism for remembering it's last location at run-time.
  * </div>
- * <ul>
- * 	<li>@see javax.swing.JFrame</li>
- * 	<li>@see java.awt.BorderLayout</li>
- * 	<li>@see java.awt.Toolkit</li>
- * 	<li>@author Rick Walker</li>
- * 	<li>@version 0.1</li>
- * 	<li>@since 11/14/2015</li>
- * </ul>
+ * 	@see javax.swing.JFrame
+ * 	@see java.awt.BorderLayout
+ * 	@see java.awt.Toolkit
+ * 	@author Rick Walker
+ * 	@version 0.1
+ * 	@since 11/14/2015
  */
 public abstract class CustomFrame extends JFrame {
 	private String coordinatesPath = GlobalConstants.USRDIR;

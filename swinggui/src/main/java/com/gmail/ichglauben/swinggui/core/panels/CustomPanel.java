@@ -11,16 +11,14 @@ import javax.swing.*;
 /**
  * <h2>Custom JPanel</h2>
  * <div>
- * 		<b>Class Dependencies:</b>&nbsp; none
+ * 		<b>Class Dependencies:</b>&nbsp; none<br>
  * 		<b>Description:</b>&nbsp; Extends JPanel and favors BorderLayout over the default FlowLayout.
  * </div>
- * <ul> 
- * 	<li>@author Rick Walker</li>
- *  <li>@version 0.1</li>
- *  <li>@since 3-12-2014</li>
- *  <li>@see javax.swing.JPanel</li>
- *  <li>@see java.awt.BorderLayout</li>
- * </ul>
+ * 	@author Rick Walker
+ *  @version 0.1
+ *  @since 3-12-2014
+ *  @see javax.swing.JPanel
+ *  @see java.awt.BorderLayout
  */
 public abstract class CustomPanel extends JPanel {
 	/**
