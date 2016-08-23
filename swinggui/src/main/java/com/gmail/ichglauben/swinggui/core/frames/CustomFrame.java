@@ -7,6 +7,7 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 import com.gmail.ichglauben.serialmanager.core.deserializer.ObjectDeserializer;
@@ -41,6 +42,34 @@ public abstract class CustomFrame extends JFrame {
 	 *            The child JPanel that provides the GUI controls
 	 */
 	public CustomFrame(CustomPanel controls) {
+		super();
+		setIconImage(wi);
+		new BorderLayout();
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				saveLocation();
+				exitProg();
+			}
+
+			public void windowOpened(WindowEvent we) {
+				setLocation();
+			}
+		});
+
+		add(controls, BorderLayout.CENTER);
+		setResizable(false);
+		pack();
+		setVisible(true);
+	}
+	
+	/**
+	 * Overloaded JComponent argument constructor
+	 * 
+	 * @param controls
+	 *            The child JComponent that provides the GUI controls
+	 */
+	public CustomFrame(JComponent controls) {
 		super();
 		setIconImage(wi);
 		new BorderLayout();
