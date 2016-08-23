@@ -122,4 +122,4 @@ public abstract class CustomFrame extends JFrame {
 	public String toString() {
 		return "Abstract Custom Frame";
 	}
-}// end class
+}
