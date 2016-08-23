@@ -113,7 +113,8 @@ public abstract class CustomFrame extends JFrame {
 	}
 
 	/** This variable contains the path to the window's icon image. */
-	private final static java.net.URL path = CustomFrame.class.getResource("/medium.gif");
+	private final static java.net.URL path = (CustomFrame.class.getResource("/appicon.gif") == null)
+			? CustomFrame.class.getResource("/medium.gif") : CustomFrame.class.getResource("/appicon.gif");
 	
 	/** @see java.awt.Toolkit */
 	private final static Image wi = Toolkit.getDefaultToolkit().createImage(path);
