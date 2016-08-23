@@ -10,4 +10,6 @@ public class MyFrame extends CustomFrame {
 	public MyFrame(MyPanel mp) {
 		super(mp);
 	}
+	
+	public String toString() { return "Custom JFrame"; }
 }

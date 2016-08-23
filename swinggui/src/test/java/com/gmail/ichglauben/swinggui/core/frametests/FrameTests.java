@@ -18,9 +18,13 @@ public class FrameTests {
 		assertTrue("Frame not null", null == mf);
 		
 		mf = new MyFrame();
+		
 		assertTrue("Frame is null", null != mf);
 		assertFalse("Frame not null", null == mf);
 		
+		mf = null;
+		
+		assertTrue("Frame not null", null == mf);
 	}
 	
 	@Test
@@ -38,7 +42,9 @@ public class FrameTests {
 		
 		assertTrue("Frame not visible", mf.isVisible());
 				
-		mf = null;		
+		mf = null;	
+		
+		assertTrue("Frame not null", null == mf);
 	}
 
 }

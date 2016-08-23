@@ -6,4 +6,6 @@ public class MyPanel extends CustomPanel {
 	public MyPanel() {
 		super();
 	}
+	
+	public String toString() { return "Custom JPanel"; }
 }

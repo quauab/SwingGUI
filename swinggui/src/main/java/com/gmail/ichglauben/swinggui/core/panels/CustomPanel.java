@@ -48,13 +48,14 @@ public abstract class CustomPanel extends JPanel {
 	protected JScrollPane createComponent(JComponent component) {
 		JScrollPane scroll = new JScrollPane(component);
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		scroll.setPreferredSize(new Dimension(270, 145));
+		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scroll.setPreferredSize(new Dimension((this.getWidth()/2 + (this.getWidth()/4)), (this.getHeight()/3)));
 		scroll.setMinimumSize(new Dimension(10, 10));
 		return scroll;
 	}
 
 	@Override
 	public String toString() {
-		return "Custom JPanel";
+		return "Abstract Custom JPanel";
 	}
 }
