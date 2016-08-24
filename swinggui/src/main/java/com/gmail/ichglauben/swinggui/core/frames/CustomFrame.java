@@ -121,8 +121,9 @@ public abstract class CustomFrame extends JFrame {
 		ObjectSerializer.serialize(new CustomFrameCoordinates(this.getX(), this.getY()),"_coordinates");	
 	}
 
-	/** Internal method that checks for and creates the _coordinates.ser file. */
-	private void setLocation() {	
+	/** Internal method that checks for and creates the _coordinates.ser file.
+	 *  @throws NullPointerException */
+	private void setLocation() throws NullPointerException {	
 		if (PathValidator.pathExists(coordinatesFilePath)) {
 			CustomFrameCoordinates cfc = (CustomFrameCoordinates)ObjectDeserializer.deserialize(coordinatesFile);	
 			this.setLocation(new Point( cfc.x_coord,cfc.y_coord));
