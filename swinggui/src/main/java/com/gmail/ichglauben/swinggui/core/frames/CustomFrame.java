@@ -84,7 +84,6 @@ public abstract class CustomFrame extends JFrame {
 				setLocation();
 			}
 		});
-
 		add(controls, BorderLayout.CENTER);
 		setResizable(false);
 		pack();
