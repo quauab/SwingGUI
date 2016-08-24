@@ -48,7 +48,6 @@ public abstract class CustomFrame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) {
-				saveLocation();
 				exitProg();
 			}
 
@@ -76,7 +75,6 @@ public abstract class CustomFrame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) {
-				saveLocation();
 				exitProg();
 			}
 
@@ -100,7 +98,6 @@ public abstract class CustomFrame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) {
-				saveLocation();
 				exitProg();
 			}
 
@@ -135,6 +132,7 @@ public abstract class CustomFrame extends JFrame {
 
 	/** Internal method called when window closing event fires. */
 	public void exitProg() {
+		saveLocation();
 		this.dispose();
 		System.exit(0);
 	}
