@@ -20,6 +20,10 @@ public class MyFrame extends CustomFrame {
 	public void exitProg() {
 		super.exitProg();
 	}
+
+	public void setTitle(String title) {
+		super.setTitle(title);
+	}
 	
 	public String toString() { return "Custom JFrame"; }
 }
