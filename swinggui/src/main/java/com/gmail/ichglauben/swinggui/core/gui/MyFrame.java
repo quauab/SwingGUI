@@ -17,5 +17,9 @@ public class MyFrame extends CustomFrame {
 		super(jc);
 	}
 	
+	public void exitProg() {
+		super.exitProg();
+	}
+	
 	public String toString() { return "Custom JFrame"; }
 }

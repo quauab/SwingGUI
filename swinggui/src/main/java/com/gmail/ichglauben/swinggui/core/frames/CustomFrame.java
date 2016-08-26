@@ -131,7 +131,7 @@ public abstract class CustomFrame extends JFrame {
 	}
 
 	/** Internal method called when window closing event fires. */
-	public void exitProg() {
+	protected void exitProg() {
 		saveLocation();
 		this.dispose();
 		System.exit(0);
@@ -142,7 +142,7 @@ public abstract class CustomFrame extends JFrame {
 			? CustomFrame.class.getResource("/medium.gif") : CustomFrame.class.getResource("/appicon.gif");
 	
 	/** @see java.awt.Toolkit */
-	private final static Image wi = Toolkit.getDefaultToolkit().createImage(path);
+	protected final static Image wi = Toolkit.getDefaultToolkit().createImage(path);
 	
 	@Override
 	public String toString() {
