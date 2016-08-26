@@ -68,6 +68,10 @@ public abstract class CustomPanel extends JPanel {
 		}
 	}
 	
+	protected void setTitle(String title) {
+		frame.setTitle(title);
+	}
+	
 	/**Setters*/
 	
 	protected void setFrame(MyFrame myFrame) {

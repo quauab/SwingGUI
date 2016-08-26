@@ -15,5 +15,9 @@ public class MyPanel extends CustomPanel {
 		super.exitProg();
 	}
 	
+	public void setTitle(String title) {
+		super.setTitle(title);
+	}
+	
 	public String toString() { return "Custom JPanel"; }
 }
