@@ -11,6 +11,7 @@ public class MyFrame extends CustomFrame {
 	
 	public MyFrame(MyPanel mp) {
 		super(mp);
+		mp.setFrame(this);
 	}
 	
 	public MyFrame(JComponent jc) {

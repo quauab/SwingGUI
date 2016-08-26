@@ -7,5 +7,13 @@ public class MyPanel extends CustomPanel {
 		super();
 	}
 	
+	public void setFrame(MyFrame frame) {
+		super.setFrame(frame);
+	}
+	
+	public void exitProg() {
+		super.exitProg();
+	}
+	
 	public String toString() { return "Custom JPanel"; }
 }

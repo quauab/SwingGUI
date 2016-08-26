@@ -1,13 +1,15 @@
 package com.gmail.ichglauben.swinggui.core.panels;
 
-import java.awt.*;
 import java.awt.BorderLayout;
-import java.awt.event.*;
-import java.awt.Toolkit;
-import java.io.*;
-import java.util.*;
-import java.util.ArrayList;
-import javax.swing.*;
+import java.awt.Dimension;
+
+import javax.swing.BorderFactory;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+import com.gmail.ichglauben.swinggui.core.frames.CustomFrame;
+import com.gmail.ichglauben.swinggui.core.gui.MyFrame;
 /**
  * <h2>Custom JPanel</h2>
  * <div>
@@ -21,6 +23,8 @@ import javax.swing.*;
  *  @see java.awt.BorderLayout
  */
 public abstract class CustomPanel extends JPanel {
+	MyFrame frame;
+	
 	/**
 	 * Single constructor, this class overrides JPanel's default layout in
 	 * favor of BorderLayout.
@@ -56,6 +60,20 @@ public abstract class CustomPanel extends JPanel {
 		return scroll;
 	}
 
+	protected void exitProg() {
+		try {
+			frame.exitProg();
+		} catch (NullPointerException npe) {
+			throw new NullPointerException("frame is null");
+		}
+	}
+	
+	/**Setters*/
+	
+	protected void setFrame(MyFrame myFrame) {
+		this.frame = myFrame;
+	}
+	
 	@Override
 	public String toString() {
 		return "Abstract Custom JPanel";
