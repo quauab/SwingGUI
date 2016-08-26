@@ -69,7 +69,11 @@ public abstract class CustomPanel extends JPanel {
 	}
 	
 	protected void setTitle(String title) {
-		frame.setTitle(title);
+		try {
+			frame.setTitle(title);
+		} catch (NullPointerException npe) {
+			throw new NullPointerException("frame is null");
+		}
 	}
 	
 	/**Setters*/
