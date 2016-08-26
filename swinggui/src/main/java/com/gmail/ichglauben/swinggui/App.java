@@ -62,6 +62,48 @@ public class App {
 				btnEnd.addMouseListener(new MouseAdapter() {
 					public void mousePressed(MouseEvent me) {
 						lblHead.setText("Program Ending");
+
+						controls.updateUI();
+					}
+				});
+			}
+		});
+	}
+
+	public static void run3() {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				final MyPanel controls = new MyPanel();
+				controls.setLayout(new BorderLayout());
+				controls.setPreferredSize(new Dimension(300, 444));
+
+				final MyFrame frame = new MyFrame(controls);
+
+				final JLabel lblHead = new JLabel("This is the picture");
+				JButton btnEnd = new JButton("End Prog");
+				JPanel pnlHead = new JPanel();
+				JPanel pnlButton = new JPanel();
+
+				controls.add(pnlHead, BorderLayout.NORTH);
+				controls.add(pnlButton, BorderLayout.SOUTH);
+
+				pnlHead.add(lblHead);
+				pnlButton.add(btnEnd);
+
+				btnEnd.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent ae) {
+						try {
+							Thread.currentThread().sleep(3000);
+						} catch (InterruptedException ir) {
+
+						}
+
+						frame.exitProg();
+					}
+				});
+				btnEnd.addMouseListener(new MouseAdapter() {
+					public void mousePressed(MouseEvent me) {
+						lblHead.setText("Program Ending");
 						controls.updateUI();
 					}
 				});
@@ -70,6 +112,6 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-		run2();
+		run3();
 	}
 }

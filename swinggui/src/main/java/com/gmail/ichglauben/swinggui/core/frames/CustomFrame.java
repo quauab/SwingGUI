@@ -144,10 +144,6 @@ public abstract class CustomFrame extends JFrame {
 	/** @see java.awt.Toolkit */
 	protected final static Image wi = Toolkit.getDefaultToolkit().createImage(path);
 	
-	public void setTitle(String title) {
-		this.setTitle(title);
-	}
-	
 	@Override
 	public String toString() {
 		return "Abstract Custom Frame";
