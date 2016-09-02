@@ -1,5 +1,5 @@
 # Swing GUI
-A template for a JFrame and JPanel. The CustomFrame class extends JFrame. It contains code to remember it's last location, at run-time it looks for
+A template for a JFrame and JPanel. The CustomFrame class extends JFrame. It contains code to remember it's last location and at run-time it looks for
 an icon for the interface named appicon.gif but defaults to medium.gif if appicon.gif is not found.
 
 <h2>Installation</h2>
@@ -17,4 +17,4 @@ an icon for the interface named appicon.gif but defaults to medium.gif if appico
 </ul>
 
 <h2>Motivation</h2>
-Pure laziness. I was fed up with writing the interface code from scratch, with the other features I wanted.
+Inspired by previously worked projects to create a GUI base, so to eliminate writing GUI code from scratch.
